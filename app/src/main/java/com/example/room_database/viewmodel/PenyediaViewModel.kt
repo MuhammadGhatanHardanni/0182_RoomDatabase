@@ -18,16 +18,21 @@ object PenyediaViewModel {
         initializer {
             EntryViewModel(aplikasiSiswa().container.repositoriSiswa)
         }
+
         //edit : tambah initializer untuk DetailViewModel dan EditViewModel
         initializer {
-            DetailViewModel(this.createSavedStateHandle(),
-                aplikasiSiswa().container.repositoriSiswa)
+            DetailViewModel(
+                this.createSavedStateHandle(),
+                aplikasiSiswa().container.repositoriSiswa
+            )
         }
 
         initializer {
-            EditViewModel(this.createSavedStateHandle(),aplikasiSiswa().container.repositoriSiswa)
+            EditViewModel(
+                this.createSavedStateHandle(),
+                aplikasiSiswa().container.repositoriSiswa
+            )
         }
-
     }
 }
 
@@ -35,5 +40,5 @@ object PenyediaViewModel {
  * Fungsi ekstensi query untuk objek [Application] dan mengembalikan sebuah instance dari
  * [AplikasiSiswa].
  */
-fun CreationExtras.aplikasiSiswa():AplikasiSiswa =
+fun CreationExtras.aplikasiSiswa(): AplikasiSiswa =
     (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiSiswa)
