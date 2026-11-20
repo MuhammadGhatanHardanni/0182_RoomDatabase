@@ -26,13 +26,13 @@ class EditViewModel(
             uiStateSiswa = repositoriSiswa.getSiswaStream(idSiswa)
                 .filterNotNull()
                 .first()
-                .toUIStateSiswa(true)
+                .toUiStateSiswa(true)
         }
     }
 
     fun updateUiState(detailSiswa: DetailsSiswa) {
         uiStateSiswa =
-            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput(detailSiswa))
+            UIStateSiswa(detailsSiswa = detailSiswa, isEntryValid = validasiInput(detailSiswa))
     }
 
     private fun validasiInput(uiState: DetailsSiswa = uiStateSiswa.detailsSiswa): Boolean {
